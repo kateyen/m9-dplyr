@@ -13,7 +13,7 @@ arrivalDelay <- flights %>%
   summarise(avgDelay = mean(arr_delay, na.rm = TRUE)) %>% 
   mutate(faa = dest) %>% 
   left_join(airports, by = 'faa') %>% 
-  arrange(-avg.delay)
+  arrange(-avgDelay)
 
 
 # Create a dataframe of the average arrival delay for each airline, then use left_join
